@@ -1,0 +1,269 @@
+The Django
+------------
+is a open source web application frame work
+open source--->
+free-->
+frame work--->combination of certain components and packages.
+
+web site--->HTML, CSS, javascript
+HTML--->design the page
+CSS---->improve the design(uniformity)
+Javascript--->inter active
+
+and these are front end
+
+Back end--->web site as dynamic ??
+
+Java, servlets, Php , python etc..
+
+in python ---> Django(back end part)
+
+MVC---> Model View Controller
+
+help to build web application... but in Django we use MVT
+
+MVT(Model view template)
+
+why Django ?
+1. Fast
+2. More components available 
+3. Security
+4. Scalability---> in future, more application, more user......
+
+
+Setup:
+-------
+pycharm
+
+Assignment:--->install pycharm---> execute a simple python progrm
+-----------------------------------------------------------------------------------
+
+1. file--->newproject--->webproject(name)--->create
+
+2. Goto terminal---> pip install django
+
+   ---->successfully installed.....
+
+3. in the terminal---> django-admin startproject DEMOPROJECT(projectname)
+
+     DEMOPROJECT-->will get created under webproject
+
+4. view--->DEMOPROJECT--->DEMPPROJECT--->
+                          manage.py-->command line utilites for interactive of djano
+
+5. DEMOPROJECT---->
+       __init__.py (package)
+       settings.py(contains setting)
+       urls.py(urls required for project)
+       wsgi.py(web server gate way interface)
+ 
+6. terminal--->
+         
+    cd DEMOPROJECT
+    python manage.py runserver
+    --->IP address will be generated  (127.0.0........)
+
+7. go to browser---> type the above IP address
+   ----> 
+
+NOTE : contrl C to return to terminal
+
+----------------------------------------------------------------------------
+
+To create website:
+-----------------
+teminal--->
+
+1.
+> python manage.py startapp DEMOAPP
+
+2. 
+ WEBPROJECT---->
+               DEMPAPP------>
+                             django will create all necessary files inside
+                              code will be there, we need to edit
+
+             
+
+		views.py--->open
+                     from django.......
+                     from django.http import HttpRespose(type)
+                     def hi(request):
+                            return HttepResponse('<H1> HELLO WORLD</H1>)
+
+NOTE:we have to create urls.py within DEMPAPP and connect that urls.py to urls.py whiin DEMOPROJECT
+
+3.
+   DEMPAPP--->right click--->create new file--->python file--->urls.py---->ok
+
+
+4. DEMOPROJECT--->urls.py-->open--->copy the content
+
+5. DEMOAPP--->urls.py--->paste
+
+6. DEMOAPP--->urls.py--->open
+    from ........
+    from .(current dir) import views
+    urlpattern=[
+               
+     path(' ', views.hi,name='home-page'),
+   ]
+
+
+Mapping:
+--------
+open-->DEMOPROJECT--->urls.py---->
+       from .......
+       from django.urls import path, include(type)
+       urlpatterns=[
+                 path('admin......)
+                 path(' ',include('DEMOAPP.urls'))
+    ]
+
+
+terminal---->
+> python manage.py runserver
+> returns IP address--->go to browser---> type the IP address(or directly click on the IP address)
+        
+
+
+-----------------------------------------------------------------------------------
+Day-2:
+------
+
+Creating an app
+
+python manage.py startapp DEMOAPP
+
+
+
+DEMPAPP--->create -->urls.py--->
+    type---->
+         from django.urls import path
+        from . import views
+        urlpaterns=[
+  
+          path('',views.home,name='home')
+ ]
+
+
+
+DEMPAPP--->views.app---->to create a function--->
+
+from django.http import HttpResponse
+
+def home(request):
+    return HttpRequest("Hello world")
+
+
+DEMOPROJECT--->urls.py---->
+............ path, include
+
+         urlpatterns=[
+               path('', include("DEMPAPP.urls")),
+
+
+
+
+----------------------------------
+
+create a separate page with more html tags
+
+templates---: we can have html page
+
+create a template folder--->then--->create a home.html file--> write HTML tages
+
+
+settings--->TEMPALTES----->
+DIRS:[os.path.join(BASE_DIR,'templates')]
+
+
+views---->
+    return render(request,'home.html')
+
+
+----------------------------------------------------
+DEMOAPP------>views.py
+from django.shortcuts import render
+
+from django.http import HttpResponse
+
+def home(request):
+    #return HttpResponse('<h1>Helloworld</h1>')
+     return render(request,'student.html',{'name':'Livya'})
+     #return render(request,'home.html')
+
+
+
+-----------------------------------------------------------
+
+
+DEMPPROJECT--->settings.py
+
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR,'templates')], #--->type this only
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+
+-------------------------------------------------------------------------------
+
+
+create a now directory under project --->called --->template
+
+create a new html file under template(right click on template -->new -->html file-->home.html
+
+
+edit the file -----> title--->body --->etc
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HELLO ISM</title>
+</head>
+<body bgcolor="yellow">
+  <h1>HELLO {{name}}</h>
+<h1>Welcome to Bangalore</h1>
+</html>
+
+--------------------------------------------------------------
+Project ----->urls.py
+
+
+from django.contrib import admin
+from django.urls import path,include#---->type this
+
+urlpatterns = [
+    path('',include('DEMOAPP.urls')),  #---->type this
+
+    path('admin/', admin.site.urls),
+]
+
+--------------------------------------------
+
+
+App---->urls.py
+
+
+from django.urls import path
+
+from . import views
+urlpatterns = [
+     path('', views.home)
+]
+
+--------------------------------------------------------
+
+
+
+in terminal---->
+python manage.py runserver
+
+
+click on IP  and launch the project

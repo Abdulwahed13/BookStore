@@ -1,0 +1,93 @@
+[
+	{
+		"model": "Books.BookCategory",
+		"pk": "34882a0a-103e-4572-b3b4-bf8d2ce05dab",
+		"fields": {
+			"created_date": "2021-09-03T09:27:28.116Z",
+			"updated_date": "2021-09-03T09:27:28.116Z",
+			"name": "Romance"
+		}
+	},
+	{
+        "model": "Books.BookCategory",
+		"pk": "5323be2d-d9dc-4fa8-a84f-89c183f5cb11",
+		"fields": {
+			"created_date": "2021-09-03T09:27:28.116Z",
+			"updated_date": "2021-09-03T09:27:28.116Z",
+			"name": "Adventure"
+		}
+	},
+    {
+        "model": "Books.BookCategory",
+		"pk": "f3214a97-7197-44f7-8659-457e304a67ff",
+		"fields": {
+			"created_date": "2021-09-03T09:27:28.116Z",
+			"updated_date": "2021-09-03T09:27:28.116Z",
+			"name": "Sci-Fi"
+		}
+	},
+    {
+        "model": "Books.BookCategory",
+		"pk": "5d9b7dde-6926-45c9-b305-dffa1de4a6a5",
+		"fields": {
+			"created_date": "2021-09-03T09:27:28.116Z",
+			"updated_date": "2021-09-03T09:27:28.116Z",
+			"name": "Fiction"
+		}
+	},
+    {
+        "model": "Books.BookCategory",
+		"pk": "c4739631-514d-4b2e-b941-756ca80d6f23",
+		"fields": {
+			"created_date": "2021-09-03T09:27:28.116Z",
+			"updated_date": "2021-09-03T09:27:28.116Z",
+			"name": "Phylosaphy"
+		}
+	},
+    {
+        "model": "Books.BookCategory",
+		"pk": "6f6b7061-9d28-4b9e-ae40-dfc77905b651",
+		"fields": {
+			"created_date": "2021-09-03T09:27:28.116Z",
+			"updated_date": "2021-09-03T09:27:28.116Z",
+			"name": "action"
+		}
+	},
+    {
+        "model": "Books.BookCategory",
+		"pk": "653a9ac5-eb44-45cd-9935-fc1bef0d2dbb",
+		"fields": {
+			"created_date": "2021-09-03T09:27:28.116Z",
+			"updated_date": "2021-09-03T09:27:28.116Z",
+			"name": "Fantasy"
+		}
+	},
+    {
+        "model": "Books.BookCategory",
+		"pk": "d1707d79-e01e-4400-a78b-319c9ba26577",
+		"fields": {
+			"created_date": "2021-09-03T09:27:28.116Z",
+			"updated_date": "2021-09-03T09:27:28.116Z",
+			"name": "Classics"
+		}
+	},
+    {
+        "model": "Books.BookCategory",
+		"pk": "5005c543-0b46-42c7-980f-66c33e84994b",
+		"fields": {
+			"created_date": "2021-09-03T09:27:28.116Z",
+			"updated_date": "2021-09-03T09:27:28.116Z",
+			"name": "Comic Book"
+		}
+	},
+    {
+        "model": "Books.BookCategory",
+		"pk": "ba6a8193-777d-4c29-ac67-a4cd20b63efa",
+		"fields": {
+			"created_date": "2021-09-03T09:27:28.116Z",
+			"updated_date": "2021-09-03T09:27:28.116Z",
+			"name": "Detective"
+		}
+	}
+
+]
